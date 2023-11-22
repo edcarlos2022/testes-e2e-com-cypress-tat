@@ -7,14 +7,8 @@ module.exports = defineConfig({
     env: {
       viewportWidthBreakpoint: 768,
     },
-    
-    setupNodeEvents(on, config) {
-      // Adiciona o tempo limite padrão aqui
-      
-
-      // implementa outros listeners de eventos do nó aqui
     },
-  },
+  projectId: "ji96fm"
 })
 
 
