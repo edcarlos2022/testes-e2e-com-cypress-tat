@@ -43,9 +43,7 @@ describe('Scenarios where authentication is a pre-condition', () => {
         .should('be.visible')
         .click()
     }
-  
     cy.contains('.nav a', 'Logout').click()
-
     cy.get('#email').should('be.visible')
   })
 })
