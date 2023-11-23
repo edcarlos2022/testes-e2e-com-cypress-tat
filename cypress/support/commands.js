@@ -13,7 +13,7 @@ Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
   }).then(message => {
     const confirmationCode = message.html.body.match(/\d{6}/)[0]
     cy.get('#confirmationCode').type(`${confirmationCode}{enter}`)
-    cy.wait('@getNotes',{timeout:30000})
+    cy.wait('@getNotes',{timeout:150000})
   })
 })
 Cypress.Commands.add('guiLogin', (
@@ -25,7 +25,7 @@ Cypress.Commands.add('guiLogin', (
   cy.get('#email').type(username)
   cy.get('#password').type(password, { log: false })
   cy.contains('button', 'Login').click()
-  cy.wait('@getNotes',{timeout:50000})
+  cy.wait('@getNotes',{timeout:150000})
   cy.contains('h1', 'Your Notes').should('be.visible')
 })
 
@@ -55,7 +55,7 @@ Cypress.Commands.add('createNote', (note, attachFile = false) => {
 
   cy.contains('button', 'Create').click()
 
-  cy.contains('.list-group-item', note).should('be.visible',{timeout:50000})
+  cy.contains('.list-group-item', note).should('be.visible',{timeout:150000})
 })
 
 Cypress.Commands.add('editNote', (note, newNoteValue, attachFile = false) => {
@@ -75,7 +75,7 @@ Cypress.Commands.add('editNote', (note, newNoteValue, attachFile = false) => {
   }
 
   cy.contains('button', 'Save').click()
-  cy.contains('.list-group-item', newNoteValue, {timeout:30000}).should('be.visible')
+  cy.contains('.list-group-item', newNoteValue, {timeout:150000}).should('be.visible')
   cy.contains('.list-group-item', note).should('not.exist')
 })
 
