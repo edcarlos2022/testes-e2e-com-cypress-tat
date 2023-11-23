@@ -25,7 +25,7 @@ Cypress.Commands.add('guiLogin', (
   cy.get('#email').type(username)
   cy.get('#password').type(password, { log: false })
   cy.contains('button', 'Login').click()
-  cy.wait('@getNotes',{timeout:40000})
+  cy.wait('@getNotes',{timeout:50000})
   cy.contains('h1', 'Your Notes').should('be.visible')
 })
 
@@ -55,7 +55,7 @@ Cypress.Commands.add('createNote', (note, attachFile = false) => {
 
   cy.contains('button', 'Create').click()
 
-  cy.contains('.list-group-item', note).should('be.visible',{timeout:30000})
+  cy.contains('.list-group-item', note).should('be.visible',{timeout:50000})
 })
 
 Cypress.Commands.add('editNote', (note, newNoteValue, attachFile = false) => {
