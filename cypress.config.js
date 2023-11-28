@@ -6,16 +6,8 @@ module.exports = defineConfig({
     baseUrl: 'https://notes-serverless-app.com',
     env: {
       viewportWidthBreakpoint: 768,
+      MAILOSAUR_API_KEY: 'G12Ib3vRaVjHQNYPnVzcpUjcLD0UZiLe',
     },
   },
   projectId: 'vzfmuu'
 })
-module.exports = defineConfig({
-  env: {
-    MAILOSAUR_API_KEY: 'G12Ib3vRaVjHQNYPnVzcpUjcLD0UZiLe',
-  },
-
-  // ...
-})
-
-
