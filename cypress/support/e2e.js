@@ -3,4 +3,4 @@ import 'cypress-mailosaur'
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
-// require('./commands')
+// require('./commands')import 'cypress-mailosaur'
